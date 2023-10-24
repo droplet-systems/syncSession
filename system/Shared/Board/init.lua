@@ -88,7 +88,7 @@ function Board:NewSession(Title: string, Information: table, Labels: table, Time
 
 		local Session = Templates.Session:Clone()
 		local Information_Container = Session.Left.Information
-		local Labels_Container = Session.Right.Buttons
+		local Labels_Container = Session.Right.Labels
 
 		for _, Table in pairs(Information) do
 			local Clone = Templates.Value:Clone()
@@ -101,7 +101,7 @@ function Board:NewSession(Title: string, Information: table, Labels: table, Time
 		end
 
 		for _, Table in pairs(Labels) do
-			local Clone = Templates.Button:Clone()
+			local Clone = Templates.Label:Clone()
 			Clone.Title.Text = Table.LabelName or ""
 
 			Clone.BackgroundColor3 = Table.LabelColor or Color3.new(0, 150, 136)
